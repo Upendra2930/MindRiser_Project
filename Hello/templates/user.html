@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}User_Info{% endblock title %}
+
+
+{% block body %}
+
+<div class="container mb-3" style="
+background:lighrgray;">
+    
+  
+ 
+  <form method="post" action ="/user">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="Name"> Full Name</label>
+      <input type="Name" class="form-control" id="name" name=name  placeholder="Enter  Full Name:">
+    </div>
+    
+    <div class="form-group">
+      <label for="Gender"> Gender</label>
+      <input type="gender" class="form-control" id="gender" name="gender" placeholder="Gender" >
+    </div> 
+
+
+    <div class="form-group">
+      <label for="Email"> Email Address</label>
+      <input type="email" class="form-control" id="Email" name="email" placeholder="Enter Your Email Address:">
+    </div>
+    
+    <div class="form-group">
+      <label for="Age"> Age</label>
+      <input type="age" class="form-control" id="age" name="age" placeholder="Enter Your Age:">
+    </div> 
+    <div class="form-group">
+      <label for="Address"> Current Address</label>
+      <input type="address" class="form-control" id="address" name="address" placeholder="Enter Your Current Address">
+    </div> 
+    <div class="form-group">
+      <label for="Occupation"> Occupation</label>
+      <input type="occupation" class="form-control" id="occupation" name="occupation" placeholder="Enter Your Occupation">
+    </div> 
+
+
+      <button class="btn btn-success" type="submit" style=" margin: 16px 1px;">Submit</button>
+    </form>
+
+
+
+</div>
+{% endblock body %}
+
+
+

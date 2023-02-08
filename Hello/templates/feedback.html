@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}FeedBack{% endblock title %}
+
+
+{% block body %}
+
+<div class="container mb-3" style="
+background:lighrgray;">
+    
+  
+ 
+  <form method="post" action ="/feedback">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="Name"> Your Name</label>
+      <input type="Name" class="form-control" id="name" name=name  placeholder="Enter Your Name:">
+    </div>
+
+    <div class="form-group">
+      <label for="Email"> Your Email Address</label>
+      <input type="email" class="form-control" id="Email" name="email" placeholder="Enter Your Email Address:">
+    </div>
+    
+    <div class="form-group">
+      <label for="Email"> Your Age</label>
+      <input type="age" class="form-control" id="age" name="age" placeholder="Enter Your Age:">
+    </div> 
+    
+      <div  class="form-group">
+        <label for="desc">Tell Us </label>
+        <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
+      </div>
+      <button class="btn btn-warning" type="submit" style=" margin: 16px 1px;">Submit</button>
+    </form>
+
+
+
+</div>
+{% endblock body %}
+
+
+
