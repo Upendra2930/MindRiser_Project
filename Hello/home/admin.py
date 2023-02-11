@@ -1,6 +1,6 @@
 from django.contrib import admin
 from home.models import Contact
-from home.models import FeedBack, UserInfo
+from home.models import FeedBack, UserInfo, Order
 
 # Register your models here.
 
@@ -9,4 +9,5 @@ from home.models import FeedBack, UserInfo
 admin.site.register(Contact)
 admin.site.register(FeedBack)
 admin.site.register(UserInfo)
+admin.site.register(Order)
 

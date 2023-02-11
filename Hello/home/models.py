@@ -28,3 +28,13 @@ class UserInfo(models.Model):
     occupation = models.CharField(max_length=122)
     def __str__(self):
         return self.name
+
+class Order(models.Model):
+    name = models.CharField(max_length=122)
+    email = models.CharField(max_length=122)
+    phone = models.CharField(max_length=12)
+    item = models.CharField(max_length=122)
+    item_no = models.CharField(max_length=5)
+    address = models.CharField(max_length=50)       
+    def __str__(self):
+        return self.name

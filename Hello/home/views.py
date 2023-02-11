@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from datetime import datetime
-from home.models import Contact, UserInfo
+from home.models import Contact, UserInfo, Order
 from home.models import FeedBack
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
@@ -89,3 +89,17 @@ def userinfo(request):
 
         messages.success(request, 'Your Information has been send!!')
     return render(request, 'user.html')  
+
+
+def order(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        item = request.POST.get('item')
+        item_no = request.POST.get('item_no')
+        address = request.POST.get('address')
+        order = Order (name=name,email=email,phone=phone,item=item,address=address,item_no=item_no)
+        order.save()
+        messages.success(request, 'ThankYou For Your Order!!')
+    return render(request, 'order.html')   

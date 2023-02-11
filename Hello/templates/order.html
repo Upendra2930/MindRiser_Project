@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}Order{% endblock title %}
+
+
+{% block body %}
+
+<div class="container mb-3" style="
+background:lighrgray;">
+    
+  
+ 
+  <form method="post" action ="/order">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="Name"> Full Name</label>
+      <input type="Name" class="form-control" id="name" name="name"  placeholder="Enter  Full Name:">
+    </div>
+    
+    <div class="form-group">
+      <label for="Email"> Email Address</label>
+      <input type="email" class="form-control" id="Email" name="email" placeholder="Enter Your Email Address:">
+    </div>
+    
+    <div class="form-group">
+      <label for="phone"> Contact Number</label>
+      <input type="Number" class="form-control" id="phone" name="phone" placeholder="Enter Your Contact ">
+    </div>
+    
+    <div class="form-group">
+      <label for="item"> Choose Your Product</label>
+      {% comment %} <input type="item" class="form-control" id="item" name="item" > {% endcomment %}
+      <select class="form-select" id="item" name='item'required>
+        <option selected disabled value="">Choose...</option>
+        <option>Monitor</option>
+           <option>KeyBoard</option>
+            <option>Mouse</option>  
+      </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="item_no">Enter Product No:</label>
+        <input type="Number" class="form-control" id="item_no" name="item_no" placeholder="Item Number">
+      </div> 
+
+
+    <div class="form-group">
+      <label for="Address"> Current Address</label>
+      <input type="address" class="form-control" id="address" name="address" placeholder="Enter Your Current Address">
+    </div> 
+    
+    {% comment %} <div class="form-group">
+      <label for="data">Enter Your Order Date</label>
+      <input type="date" class="form-control" id="date" name="date" placeholder="Enter Your Date  to be Delivery">
+    </div>  {% endcomment %}
+   
+
+
+      <button class="btn btn-success" type="submit" style=" margin: 16px 1px;">Submit</button>
+    </form>
+
+    
+</div>
+    
+    {% endblock body %}
+    
+    
+
